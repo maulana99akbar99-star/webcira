@@ -1,0 +1,325 @@
+/* romantic-love.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #c7ceea 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Romantic Header Styles */
+.romantic-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.love-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 
+        0 0 20px rgba(255, 105, 180, 0.8),
+        0 0 40px rgba(255, 20, 147, 0.6),
+        0 0 60px rgba(255, 0, 127, 0.4);
+    margin-bottom: 1rem;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.love-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Main Content Container */
+.romantic-container {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.37),
+        0 0 20px rgba(255, 105, 180, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Image Gallery */
+.romantic-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.romantic-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.romantic-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+}
+
+.romantic-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.romantic-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Audio Player Styles */
+.music-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.music-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.romantic-audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.love-button {
+    background: linear-gradient(45deg, #ff6b6b, #ff1493);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(255, 105, 180, 0.4),
+        0 0 20px rgba(255, 20, 147, 0.3);
+    margin: 1rem 0;
+}
+
+.love-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(255, 20, 147, 0.4);
+    background: linear-gradient(45deg, #ff1493, #ff6b6b);
+}
+
+.love-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Footer Text */
+.romantic-footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 20px rgba(255, 105, 180, 0.8),
+            0 0 40px rgba(255, 20, 147, 0.6),
+            0 0 60px rgba(255, 0, 127, 0.4);
+    }
+    100% {
+        text-shadow: 
+            0 0 30px rgba(255, 105, 180, 1),
+            0 0 60px rgba(255, 20, 147, 0.8),
+            0 0 80px rgba(255, 0, 127, 0.6);
+    }
+}
+
+/* Heart Animation */
+.heart {
+    position: absolute;
+    font-size: 2em;
+    color: #ff1493;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatHeart 6s ease-in-out forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Petal Animation */
+.petal {
+    position: absolute;
+    top: -10px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    animation: fallPetal 8s linear forwards;
+}
+
+@keyframes fallPetal {
+    0% {
+        transform: translateX(0vw) translateY(-10vh) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(100vw) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .love-title {
+        font-size: 2.5rem;
+    }
+    
+    .love-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .romantic-container {
+        padding: 1.5rem;
+    }
+    
+    .romantic-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .romantic-image {
+        height: 250px;
+    }
+    
+    .music-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .love-title {
+        font-size: 2rem;
+    }
+    
+    .romantic-container {
+        padding: 1rem;
+    }
+    
+    .romantic-image {
+        height: 200px;
+    }
+    
+    .love-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* Special Effects Overlay */
+.romantic-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Loading Animation */
+.loading-hearts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.loading-heart {
+    width: 20px;
+    height: 20px;
+    background: #ff1493;
+    transform: rotate(45deg);
+    animation: heartbeat 1.5s infinite;
+}
+
+.loading-heart::before,
+.loading-heart::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #ff1493;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.loading-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.loading-heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: rotate(45deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.1);
+    }
+}

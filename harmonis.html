@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Love Website - Just for You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #c7ceea);
+            overflow-x: hidden;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #ff1493;
+            animation: float 3s ease-in-out forwards;
+        }
+        .petal {
+            position: absolute;
+            top: -10px;
+            opacity: 0.7;
+            animation: fall 5s linear forwards;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        @keyframes fall {
+            0% { transform: translateX(0vw) translateY(-10vh); }
+            100% { transform: translateX(100vw) translateY(110vh); }
+        }
+        .glow {
+            text-shadow: 0 0 10px #ffa500;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center relative">
+    <h1 class="text-4xl font-bold text-white text-center mb-8 glow" id="title">Best person!!</h1>
+    
+    <div class="max-w-4xl mx-auto bg-white bg-opacity-20 rounded-lg shadow-lg p-6 backdrop-blur">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="flex justify-center">
+                <img src="c:\Users\Lenovo\Downloads\Capture.PNG" alt="Romantic couple embracing under a starry night sky with fireworks and rose petals falling around them, painted in soft pastel colors" class="rounded-lg shadow-lg" onerror="this.style.display='none';" />
+            </div>
+            <div class="flex justify-center">
+                <img src="c:\Users\Lenovo\Downloads\Capture2.PNG" alt="Elegant dinner table set with candles, wine glasses, heart-shaped chocolate box, and bouquet of red roses in a dimly lit restaurant ambiance" class="rounded-lg shadow-lg" onerror="this.style.display='none';" />
+            </div>
+        </div>
+        
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-semibold text-white mb-4">Our Love Song - Always With You</h2>
+            <audio controls loop class="w-full">
+                <source src="c:\Users\Lenovo\Downloads\nadhif basalamah - penjaga hati (Official Lyric Video).mp3" type="audio/mpeg"> <!-- Placeholder; in real use, provide actual romantic audio URL -->
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div class="text-center">
+            <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300" onclick="createHearts()">Spread Love!</button>
+        </div>
+        
+        <p class="text-center text-white mt-4">Click to create floating hearts and petals, just for you, my love. Forever yours, with endless romance.</p>
+    </div>
+    
+    <script>
+        function createHearts() {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }
+            
+            for (let j = 0; j < 5; j++) {
+                const petal = document.createElement('img');
+                petal.src = 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/71189c5d-c58e-4bcb-a28a-cadb2549a4e5.png';
+                petal.alt = 'Falling rose petal in soft pink color drifting gently';
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(petal);
+                setTimeout(() => petal.remove(), 10000);
+            }
+        }
+        
+        // Auto-play romantic effects every 10 seconds
+        setInterval(createHearts, 10000);
+    </script>
+</body>
+</html>
+</content>
+</create_file>
